@@ -1,0 +1,11 @@
+@ECHO OFF
+:BEGIN
+CLS
+
+TITLE SB-DOCKER - MAVEN POM CONFIG - BUILD DOCKER IMAGE
+
+CD ..
+
+CALL %MAVEN_HOME%\bin\mvn spring-boot:build-image
+
+:END
