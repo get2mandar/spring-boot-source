@@ -6,7 +6,7 @@ TITLE SB-KAFKA - JAR RUN
 
 CD ..
 
-CALL %JAVA11_HOME%\bin\java -jar -Xss512k target\spring-boot-kafka-0.1.jar
+CALL %JAVA_HOME%\bin\java -jar -XX:+UseSerialGC -Xss512k target\spring-boot-kafka-0.1.jar
 
 
 :END
