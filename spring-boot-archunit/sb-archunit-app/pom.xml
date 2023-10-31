@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wp.panditmandar</groupId>
-	<artifactId>spring-boot-docker</artifactId>
+	<artifactId>sb-archunit-app</artifactId>
 	<version>0.1</version>
 	<packaging>jar</packaging>
 
@@ -16,8 +16,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<name>spring-boot-docker</name>
-	<description>Demo Project for Spring Boot with Docker</description>
+	<name>sb-archunit-app</name>
+	<description>Demo Project for Spring Boot with ArchUnit Test App for Maven
+		Dependency based Checks</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,10 +34,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.3.8</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.wp.panditmandar</groupId>
+			<artifactId>sb-archunit-checker</artifactId>
+			<version>0.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -46,14 +63,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<image>
-						<name>docker.io/get2mandar/${project.artifactId}:v1</name>
-					</image>
-					<layers>
-						<enabled>true</enabled>
-					</layers>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
