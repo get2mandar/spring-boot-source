@@ -1,4 +1,4 @@
-package blog.panditmandar.archunit;
+package com.wp.panditmandar.archunit;
 
 import java.math.BigDecimal;
 
